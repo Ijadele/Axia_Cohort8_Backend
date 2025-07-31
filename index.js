@@ -35,6 +35,6 @@ app.use((error, req, res, next) => {
     return res.status(error.status || 501).json({message: error.message || "something went wrong"})
 })
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.listen(port, console.log(`app is listening to port ${port}`))
 
